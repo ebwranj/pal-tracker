@@ -35,7 +35,7 @@ public class TimeEntryApiTest {
 
 
         assertThat(createResponse.getStatusCode()).isEqualTo(HttpStatus.CREATED);
-
+        
         DocumentContext createJson = parse(createResponse.getBody());
         assertThat(createJson.read("$.id", Long.class)).isGreaterThan(0);
         assertThat(createJson.read("$.projectId", Long.class)).isEqualTo(projectId);
