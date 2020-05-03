@@ -7,6 +7,7 @@ import io.pivotal.pal.tracker.TimeEntry;
 import io.pivotal.pal.tracker.TimeEntryRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.Date;
@@ -78,7 +79,12 @@ public class JdbcTimeEntryRepositoryTest {
 
     @Test
     public void findReturnsNullWhenNotFound() {
+
         TimeEntry timeEntry = subject.find(999L);
+
+
+
+        System.out.println("value returned" + timeEntry);
 
         assertThat(timeEntry).isNull();
     }
