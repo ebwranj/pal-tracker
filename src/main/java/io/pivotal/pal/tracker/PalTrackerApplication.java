@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @SpringBootApplication
-@Configuration
 public class PalTrackerApplication {
 
     public static void main(String[] args) {
